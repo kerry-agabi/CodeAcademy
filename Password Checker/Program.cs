@@ -14,11 +14,12 @@ namespace PasswordChecker
             bool containsLower = password.Any(char.IsLower);
             bool containsDigit = password.Any(char.IsDigit);
             bool containsSymbol = password.Any(char.IsSymbol);
+            int Score = 0;
 
             if (password.Length > 8) 
             {
 
-                Console.WriteLine("");
+                Score++;
             }
 
             else 
@@ -29,7 +30,7 @@ namespace PasswordChecker
             if ( containsUpper)
             {
 
-                Console.WriteLine("");
+                Score++;
             }
 
             else
@@ -41,7 +42,7 @@ namespace PasswordChecker
             if (containsLower)
             {
 
-                Console.WriteLine("");
+                Score++;
             }
 
             else
@@ -51,7 +52,7 @@ namespace PasswordChecker
 
             if(containsSymbol)
             {
-                Console.WriteLine("");
+                Score++;
 
             }
             else
@@ -61,7 +62,7 @@ namespace PasswordChecker
 
             if ( containsDigit)
             {
-                Console.WriteLine("");
+                Score++;
             }
 
             else
@@ -69,20 +70,65 @@ namespace PasswordChecker
                 Console.WriteLine("Password needs to contain Numbers");
             }
 
-            if (password.Length < 8 && !containsUpper && !containsSymbol && !containsLower && !containsDigit)
+            if ( containsUpper && password.Length > 8 && containsSymbol && containsLower && containsDigit)
             {
 
-                Console.WriteLine("Password is Hella weak");
+                Console.WriteLine("Password is Hella Strong");
+                Score++;
+                Score++;
+
+                
             }
 
             else
             {
-                Console.WriteLine("Password is Hella Strong");
+                Console.WriteLine("Password is Hella weak");
             }
-            
+
+            Console.WriteLine(Score);
+
+
+            switch (Score)
+            {
+
+                case 1:
+                    Console.WriteLine("Password is Hella Wack, Not weak");
+                    break;
+
+                    case 2:
+                    Console.WriteLine("Password is mediocre ");
+                    break;
+
+                case 3:
+                    Console.WriteLine("Password is weak ");
+                    break;
+
+                case 4:
+                    Console.WriteLine("Password is medium");
+                    break;
+
+                case 5:
+                    Console.WriteLine("Password is getting stronger");
+                    break;
+                case 6:
+                    Console.WriteLine("Password is getting stronger");
+                    break;
+                case 7:
+                    Console.WriteLine("Password is Hella Strong");
+
+                    break;
+
+                default:
+                    Console.WriteLine("Somethings wrong");
+                    break;
 
 
 
+
+
+
+
+            }
 
 
 
