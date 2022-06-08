@@ -73,7 +73,7 @@ namespace PasswordChecker
             if ( containsUpper && password.Length > 8 && containsSymbol && containsLower && containsDigit)
             {
 
-                Console.WriteLine("Password is Hella Strong");
+                Console.WriteLine("Password is Strong");
                 Score++;
                 Score++;
 
@@ -82,7 +82,7 @@ namespace PasswordChecker
 
             else
             {
-                Console.WriteLine("Password is Hella weak");
+                Console.WriteLine("Password is weak");
             }
 
             Console.WriteLine(Score);
@@ -92,7 +92,7 @@ namespace PasswordChecker
             {
 
                 case 1:
-                    Console.WriteLine("Password is Hella Wack, Not weak");
+                    Console.WriteLine("Password is weak");
                     break;
 
                     case 2:
@@ -114,7 +114,7 @@ namespace PasswordChecker
                     Console.WriteLine("Password is getting stronger");
                     break;
                 case 7:
-                    Console.WriteLine("Password is Hella Strong");
+                    Console.WriteLine("Password is Strong");
 
                     break;
 
